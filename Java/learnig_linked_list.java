@@ -19,6 +19,17 @@ class Solution {
 		return newNode;
 	
 	}
+	public Node deleteFromLast(Node head){
+		if(head != null || head.next != null){
+			return null;
+		}
+		Node curr = head;
+		while(curr.next.next != null){
+			curr= curr.next;
+		}
+		curr.next= null;
+		return head;
+	}
 	public void printList(Node head){
 		Node temp=head;
 		while(temp != null){
@@ -34,6 +45,8 @@ public class learnig_linked_list{
 		Solution sol = new Solution();
 		Node head = new Node(2);
 		head.next = new	Node(3);
+		head.next.next= new Node(4);
+		/*
 		System.out.println("Original data :");
 		sol.printList(head);
 
@@ -41,7 +54,9 @@ public class learnig_linked_list{
 
 		System.out.println("After insert at head :");
 		sol.printList(head);
-
+		*/
+		head=sol.deleteFromLast(head);
+		sol.printList(head);
 		
 	}
 }
