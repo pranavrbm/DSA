@@ -1,5 +1,5 @@
 def isUnique(string:str):
-    if len(string) > 128: return false
+    if len(string) > 128: return False
     
     charset = [False] * 128
     
